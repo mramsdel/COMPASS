@@ -1,0 +1,857 @@
+%=========================================================================
+% Start of first activity on the FTC
+%=========================================================================
+\preClass{Basic Kinematics}
+
+\begin{problem}
+\item A 2 kg object starts from rest on a straight track, and it can
+  only move left or right. The positive direction is to the right, and
+  the $\vec{i}$ component of the velocity is given in the plot below.
+
+  %\scalebox{0.5}{\input{py/week8/piecewiseConstantVelI_week8day2.pgf}}
+
+  \begin{tikzpicture}[y=0.4cm, x=1.75cm,font=\sffamily]
+    % ticks
+    \draw[xstep = 1, ystep=1,gray,dashed] (0.0, 0.0) grid ( 4.5, 16.5);  %  very thin,opacity=0.85,
+    % axis
+    \draw[thick,->] (-0.5,0) -- coordinate (x axis mid) (4.5,0)  node[anchor = north west] {$t$ (sec)};
+    \draw[->] (0,-0.5) -- coordinate (y axis mid) (0,16.5) node[anchor = south east] {Vel. (m/sec)};
+
+      \foreach \y in {2,4,...,16} {
+        \draw (1pt, \y) -- (-1pt, \y) node[anchor = east] {$\y$};
+      }
+      \foreach \x in {1,2,3,4} {
+        \draw (\x,1pt) -- (\x,-1pt) node[anchor = north] {$\x$};
+      }
+
+     %\draw[scale=1.0,domain=0:5.1,smooth,variable=\x,very thick,black,samples=60]
+    %    plot ({\x},{(\x)^2}); %node[anchor= west] {$f(x)=e^{ax}$};
+
+    %\draw[pattern=crosshatch dots, pattern color=black,very thin,opacity=0.85] (1,0) rectangle (3,1);
+    %\draw[pattern=crosshatch dots, pattern color=black,very thin,opacity=0.85] (3,0) rectangle (5,9);
+
+     \draw[ultra thick] (0,0) -- (2,0);
+     \fill[black] (0,0) circle [radius=0.5ex];
+     \fill[white] (2,0) circle [radius=0.5ex];
+     \draw (2,0) circle [radius=0.5ex];
+
+     \draw[very thick] (2,4) -- (4,4);
+     \fill[black] (2,4) circle [radius=0.5ex];
+     \fill[white] (4,4) circle [radius=0.5ex];
+     \draw (4,4) circle [radius=0.5ex];
+
+    \end{tikzpicture}
+
+
+  \begin{subproblem}
+    \item Determine the total change in the position of the object
+      from $t=0$ to $t=4$ seconds.
+      \vfill
+  \end{subproblem}
+  \clearpage
+
+\item A 2 kg object starts from rest on a straight track, and it can
+  only move left or right. The positive direction is to the right, and
+  the $\vec{i}$ component of the velocity is given in the plot below.
+
+  %\scalebox{0.5}{\input{py/week8/piecewiseConstantVekII_week8day2.pgf}}
+
+  \begin{tikzpicture}[y=0.4cm, x=1.75cm,font=\sffamily]
+    % ticks
+    \draw[xstep = 1, ystep=1,gray,dashed] (0.0, 0.0) grid ( 4.5, 16.5);  %  very thin,opacity=0.85,
+    % axis
+    \draw[thick,->] (-0.5,0) -- coordinate (x axis mid) (4.5,0)  node[anchor = north west] {$t$ (sec)};
+    \draw[->] (0,-0.5) -- coordinate (y axis mid) (0,16.5) node[anchor = south east] {Vel. (m/sec)};
+
+      \foreach \y in {2,4,...,16} {
+        \draw (1pt, \y) -- (-1pt, \y) node[anchor = east] {$\y$};
+      }
+      \foreach \x in {1,2,3,4} {
+        \draw (\x,1pt) -- (\x,-1pt) node[anchor = north] {$\x$};
+      }
+
+     %\draw[scale=1.0,domain=0:5.1,smooth,variable=\x,very thick,black,samples=60]
+    %    plot ({\x},{(\x)^2}); %node[anchor= west] {$f(x)=e^{ax}$};
+
+    %\draw[pattern=crosshatch dots, pattern color=black,very thin,opacity=0.85] (1,0) rectangle (3,1);
+    %\draw[pattern=crosshatch dots, pattern color=black,very thin,opacity=0.85] (3,0) rectangle (5,9);
+
+     \draw[ultra thick] (0,0) -- (1,0);
+     \fill[black] (0,0) circle [radius=0.5ex];
+     \fill[white] (1,0) circle [radius=0.5ex];
+     \draw (1,0) circle [radius=0.5ex];
+
+     \draw[very thick] (1,1) -- (2,1);
+     \fill[black] (1,1) circle [radius=0.5ex];
+     \fill[white] (2,1) circle [radius=0.5ex];
+     \draw (2,1) circle [radius=0.5ex];
+
+     \draw[very thick] (2,4) -- (3,4);
+     \fill[black] (2,4) circle [radius=0.5ex];
+     \fill[white] (3,4) circle [radius=0.5ex];
+     \draw (3,4) circle [radius=0.5ex];
+
+     \draw[very thick] (3,9) -- (4,9);
+     \fill[black] (3,9) circle [radius=0.5ex];
+     \fill[white] (4,9) circle [radius=0.5ex];
+     \draw (4,9) circle [radius=0.5ex];
+
+    \end{tikzpicture}
+
+
+  \begin{subproblem}
+    \item Determine the total change in the position of the object
+      from $t=0$ to $t=4$ seconds.
+      \vfill
+  \end{subproblem}
+
+\end{problem}
+
+
+\actTitle{Change in Position as Area}
+\begin{problem}
+\item A 2 kg object starts from rest on a straight track, and it can
+  only move left or right. The positive direction is to the right, and
+  the velocity at any time is $\vec{v}(t)=\vec{i} \; t^2$.
+
+  \begin{subproblem}
+    \item Make a sketch of the \textbf{velocity} in the $\vec{i}$
+      direction using the axes below.
+
+      %\scalebox{0.5}{\input{py/week8/changingVelGrid_week8day2.pgf}}
+      \begin{tikzpicture}[y=0.4cm, x=1.75cm,font=\sffamily]
+        % ticks
+        \draw[xstep = 1, ystep=1,gray,dashed] (0.0, 0.0) grid ( 4.5, 16.5);  %  very thin,opacity=0.85,
+        % axis
+        \draw[thick,->] (-0.5,0) -- coordinate (x axis mid) (4.5,0)  node[anchor = north west] {$t$ (sec)};
+        \draw[->] (0,-0.5) -- coordinate (y axis mid) (0,16.5) node[anchor = south east] {Vel. (m/sec)};
+
+          \foreach \y in {2,4,...,16} {
+            \draw (1pt, \y) -- (-1pt, \y) node[anchor = east] {$\y$};
+          }
+          \foreach \x in {1,2,3,4} {
+            \draw (\x,1pt) -- (\x,-1pt) node[anchor = north] {$\x$};
+          }
+
+         %\draw[scale=1.0,domain=0:5.1,smooth,variable=\x,very thick,black,samples=60]
+        %    plot ({\x},{(\x)^2}); %node[anchor= west] {$f(x)=e^{ax}$};
+
+        %\draw[pattern=crosshatch dots, pattern color=black,very thin,opacity=0.85] (1,0) rectangle (3,1);
+        %\draw[pattern=crosshatch dots, pattern color=black,very thin,opacity=0.85] (3,0) rectangle (5,9);
+
+        \end{tikzpicture}
+
+
+    \item Determine the change in the position of the object after 4
+      seconds by dividing up the time into four equally spaced
+      intervals from $t=0$ to $t=4$ and assume that the force is constant over each
+      interval. Sketch the assumed, piecewise constant velocity, on the
+      axes above.
+      \vfill
+    \item Determine the change in position of the object after 4
+      seconds by dividing up the time into eight equally spaced
+      intervals from $t=0$ to $t=4$ and assume that the force is constant over each
+      interval. Sketch the assumed, piecewise constant velocity, on the
+      axes above.
+      \vfill
+  \end{subproblem}
+  \clearpage
+
+\item How can you improve the approximation in the previous activity?
+  \vspace{3em}
+
+\item Determine a way to express the approximation for the general
+  case where there are $N$ intervals.
+
+  \vfill
+
+\end{problem}
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+\item The position of an object is given by the equations
+  below. Determine the velocity at any time.
+  \begin{subproblem}
+  \item $x(t) = e^{3t} + 4t  - 5$.
+    \vfill
+  \item $x(t) = 2\cos(\pi t) + \ln(t+2)$.
+    \vfill
+  \end{subproblem}
+\item The velocity of objects are given by the equations
+  below. Determine the position of each object. Assume each object
+  starts at $x=1$m.
+  \begin{subproblem}
+  \item $v(t) = 3t - 5$.
+    \vfill
+  \item $v(t) = -2 t^3 + 10$.
+    \vfill
+  \end{subproblem}
+\clearpage
+\item The velocity of an object is
+  \begin{eqnarray*}
+    \vec{v}(t) & = & \cos(2t) \vec{i}.
+  \end{eqnarray*}
+  \begin{subproblem}
+  \item Make a sketch of the velocity.
+    \sideNote{ Be sure to label your axes and label all important
+      points on your graph.}
+    \vfill
+  \item Express the change in the position from time 0 to time $T$ as
+    a definite integral.
+    \vfill
+  \item Determine the change in the position from time 0 to time $T$
+    by solving the definite integral.
+    \vfill
+  \item Make a sketch of the change in position and briefly describe
+    the change in position.
+    \sideNote{Be sure to label your axes and label all important
+      points on your graph.}
+    \vfill
+  \end{subproblem}
+  \clearpage
+
+\item The velocity of an object is
+  \begin{eqnarray*}
+    \vec{v}(t) & = & \lp 5 - 5 e^{t/3} \rp \vec{i}.
+  \end{eqnarray*}
+  \begin{subproblem}
+  \item Make a sketch of the velocity.  \sideNote{ Be sure to label
+      your axes and label all important points on your graph.}
+    \vfill
+  \item Express the change in the position from time 0 to time $T$ as
+    a definite integral.
+    \vfill
+  \item Determine the change in the position from time 0 to time $T$
+    by solving the definite integral.
+    \vfill
+  \end{subproblem}
+\end{problem}
+
+
+%=========================================================================
+% Start of activity on u substitution
+%=========================================================================
+\preClass{The Chain Rule}
+
+\begin{problem}
+\item Determine the derivatives of each the following functions. For
+  the functions that have $u(t)$ keep the final answer in terms of
+  $u'(t)$. In each case $C$ is a constant value.
+  \begin{subproblem}
+    \item $f(t) = e^{5t^2} + C$
+      \vfill
+    \item $f(t) = e^{u(t)} + C$
+      \vfill
+    \item $g(t) = t \cos(3t+6)  + C$
+      \vfill
+    \item $g(t) = t \cos(u(t))  + C$
+      \vfill
+    \item $h(t) = \ln\lp e^{8t} + 5 \rp  + C$
+      \vfill
+    \item $h(t) = \ln\lp u(t) \rp  + C$
+      \vfill
+  \end{subproblem}
+
+\end{problem}
+
+
+\actTitle{$u$-Substitution}
+\begin{problem}
+  \clearpage
+
+\item The derivative of a function is given. Determine the
+  anti-derivative of each function. In each case assume that $u=u(t)$
+  is a function of $t$. \sideNote{Do not forget the constant!}
+  \begin{subproblem}
+  \item $F'(t) = \sin(u(t)) u'(t)$
+    \vfill
+  \item $G'(t) = e^{u(t)} u'(t)$
+    \vfill
+  \item $H'(t) = \frac{1}{u(t)} \cdot u'(t)$
+    \vfill
+  \end{subproblem}
+
+  \clearpage
+
+\item The force in Newtons acting on the car is given below. In each
+  case determine the change in the momentum of the car from $t=0$ to
+  $t=2$. \sideNote{Express the change as a definite integral and use
+    the correct notation.}
+  \begin{subproblem}
+    \item $\vec{F} = \cos(\pi t) \vec{i}.$
+      \vfill
+    \item $\vec{F} = \lp 2 - 2 e^{t/9} \rp \vec{i}.$
+      \vfill
+    \item $\vec{F} = \frac{1}{t+1} \ln\lp t+1 \rp \vec{i}.$
+      \vfill
+  \end{subproblem}
+
+\end{problem}
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+\item Determine the derivatives of the following functions:
+  %\sideNote{Leave the answer in terms of $u'(t)$.}
+  \begin{subproblem}
+  \item $f(t) = \cos(4t) + \ln(5t^2)$.
+    \vfill
+  \item $g(t) = \sin\lp e^{4t^5} \rp  + e^{\cos\lp 8t-5 \rp}$.
+    \vfill
+  \item $h(t) = \ln(4+\sin(2t) ) \cdot \cos \lp e^{2t^8} \rp$.
+    \vfill
+  \end{subproblem}
+
+  \clearpage
+
+\item A bag of sand lies on the floor, and its initial mass is 50
+  kg. For each meter it is dragged sand is spilled, and it loses
+  roughly 10\% of its mass each meter. The coefficient of friction
+  between the bag and the floor is approximately $0.1$. A rope is
+  attached to the bag, and the following force is applied to the bag
+  \begin{eqnarray*}
+    \vec{F}(t) & = & 10e^{-2t} \vec{i} + 20 e^{-2t} \vec{j}.
+  \end{eqnarray*}
+  How much work does the force exert on the bag?
+
+  \vfill
+
+
+\end{problem}
+
+%=========================================================================
+% Start of activities on practice of the ftc
+%=========================================================================
+\preClass{Definite Integrals}
+
+\begin{problem}
+\item For each function and bound determine the integral of the
+  function geometrically as well as analytically. \sideNote{Make a
+    sketch of the curve and indicate the signed area.}
+  \begin{subproblem}
+  \item $f(t)=t$ for $t=0$ to $t=1$.
+    \vfill
+  \item $g(t)=t+1$ for $t=0$ to $t=1$.
+    \vfill
+  \item $h(t)=-t$ for $t=0$ to $t=1$.
+    \vfill
+  %\item $f(t)=3t-4$ for $t=0$ to $t=2$.
+  %  \vfill
+  \end{subproblem}
+\end{problem}
+
+
+\actTitle{Impulse as a Definite Integral}
+\begin{problem}
+\item An object has a mass of 3 kg and rests on a flat table. It
+  initially starts at rest at the point $\vec{x}=1\vec{i}$. It is
+  subject to a force given by $\vec{F}(t) = \cos(\pi t) \vec{i}$.
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram.
+      \vspace{5em}
+    \item Use the impulse/momentum theorem to determine the change in
+      momentum of the object from $t=0$ to any time $t=T$.
+      \vfill
+    \item Solve the previous relationship for the velocity at any time
+      and determine the position of the object at any time.
+      \vfill
+  \end{subproblem}
+
+  \clearpage
+
+\item A 3 kg object is initially located at $\vec{x}=1\vec{i}$ and
+  starts from rest. Ignore the force due to friction between the
+  object and the ground. A force of 10N is applied, and the angle
+  changes uniformly from 0 radians to $\pi$ radians over a time of
+  30 seconds.\\
+  \includegraphics[width=7cm]{ink/week9/workAngleChanging}
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram next to the diagram above.
+    \item Determine the \textbf{work integral} that represents the
+      work done by the force over the 30 second time span.  (Note that
+      we are not yet able to determine the value of this integral.)
+      \sideNote{Carefully move through the stages required to
+        calculate a work integral. Carefully denote each step and
+        briefly justify your choices.}
+
+      \vfill
+
+  \end{subproblem}
+\end{problem}
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+\item An object has a mass of 3 kg. It initially starts with a
+  velocity of $2\vec{j}$ at the point $\vec{x}=1\vec{i}$. It is
+  subject to a force given by $\vec{F}(t) = \sin(\pi t)\vec{j}$.
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram.
+      \vspace{5em}
+    \item Use the impulse/momentum theorem to determine the change in
+      momentum of the object from $t=0$ to any time $t=T$.
+      \vfill
+    \item Solve the previous relationship for the velocity at any time
+      and determine the position of the object at any time.
+      \vfill
+  \end{subproblem}
+
+  \clearpage
+
+\item An object has a mass of 3 kg. It initially starts at rest with a
+  velocity of $2\vec{j}$ at the point $\vec{x}=1\vec{i}$. It is
+  subject to a force given by
+  $\vec{F}(t) = \cos(\pi t)\vec{i}+\sin(\pi t)\vec{j}$.
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram.
+      \vspace{5em}
+    \item Use the impulse/momentum theorem to determine the change in
+      momentum of the object from $t=0$ to any time $t=T$.
+      \vfill
+    \item Solve the previous relationship for the velocity at any time
+      and determine the position of the object at any time.
+      \vfill
+  \end{subproblem}
+\end{problem}
+
+
+%=========================================================================
+% Start of activity on center of mass
+%=========================================================================
+\preClass{Areas Between Curves}
+
+\begin{problem}
+\item Determine the signed areas bounded by the curves described
+  below. In each case first make a sketch of the region and then
+  determine the integral. Determine the signed area geometrically
+  rather than analytically if you are able to.
+  \begin{subproblem}
+  \item Above $y=1$, below $y=2x+1$, to the right of $x=0$ and to the
+    left of $x=1$.
+    \vfill
+  \item Above $y=-1$, below $y=x+1$, to the right of $x=0$ and to the
+    left of $x=2$.
+    \vfill
+  \end{subproblem}
+
+\clearpage
+
+\item An object has uniform density, and it is 0.1 m thick. Its mass
+  is 1.2 kg. The object is bounded on the left by $x=0$, on the right by
+  $x=6$, above by $y=7$, and below by $y=x$.
+  \begin{subproblem}
+    \item Make a sketch of the object.
+      \vfill
+    \item Determine the volume of the object geometrically.
+      \vfill
+    \item Determine the density of the object.
+      \vfill
+  \end{subproblem}
+
+
+\end{problem}
+
+
+\actTitle{Density and Center of Mass}
+\begin{problem}
+
+\item An object has uniform density, and it is 0.1 m thick. Its
+  density is .5 kg/m\textsuperscript{3}. The object is bounded on the
+  left by $x=0$, on the right by $x=6$, above by $y=7$, and below by
+  $y=x$.
+  \begin{subproblem}
+    \item Make a sketch of the object. Show how you would subdivide
+      the object for using an integral to determine the mass.
+      \sideNote{Will you use vertical or horizontal strips?}
+      \vfill
+    \item Determine the mass of the object analytically.
+      \sideNote{First derive the Riemann sum, take the limit, and then
+        determine and solve the definite integral.}
+      \vfill
+    \item Determine the center of mass of the object.
+      \vfill
+  \end{subproblem}
+
+  \clearpage
+
+\item An object has uniform density, and it is 0.1 m thick. Its
+  density is .6 kg/m\textsuperscript{3}. The object is bounded on the
+  left by $x=0$, on the right by $x=1$, above by $y=x^2$, and below by
+  $y=0$.
+  \begin{subproblem}
+    \item Make a sketch of the object. Show how you would subdivide
+      the object for using an integral to determine the mass.
+      \sideNote{Will you use vertical or horizontal strips?}
+      \vfill
+    \item Determine the mass of the object analytically.
+      \sideNote{First derive the Riemann sum, take the limit, and then
+        determine and solve the definite integral.}
+      \vfill
+    \item Determine the center of mass of the object.
+      \vfill
+  \end{subproblem}
+
+
+\end{problem}
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+\item An object has uniform density, and it is 0.1 m thick. Its mass
+  is 10 kg. The object is bounded on the left by $x=0$, on the right
+  by $x=5$, above by $y=x^2$, and below by $y=-x^2$.
+  \begin{subproblem}
+    \item Make a sketch of the object.
+      \sideNote{Indicate how you are going to subdivide the object to
+        calculate the volume.}
+      \vfill
+    \item Determine the volume of the object.
+      \vfill
+    \item Determine the density of the object.
+      \vfill
+  \end{subproblem}
+  \clearpage
+
+\item An object has a density that changes, and it is 0.1 m thick. Its
+  density is uniform in the $z$ direction, and the density at a point
+  $(x,y)$ is $\rho(x,y)=1+\sqrt{x}$ kg/m\textsuperscript{3}. The
+  object is bounded on the left by $x=0$, on the right by $x=5$, above
+  by $y=7$, and below by $y=x$.
+  \begin{subproblem}
+    \item Make a sketch of the object. Show how you would subdivide
+      the object for using an integral to determine the mass.
+      \sideNote{Will you use vertical or horizontal strips?}
+      \vfill
+    \item Determine the mass of the object analytically.
+      \sideNote{First derive the Riemann sum, take the limit, and then
+        determine and solve the definite integral.}
+      \vfill
+    \item Determine the center of mass of the object.
+      \vfill
+  \end{subproblem}
+\end{problem}
+
+%=========================================================================
+% Start of day on optimization and kinematics
+%=========================================================================
+\preClass{Center of Mass}
+
+\begin{problem}
+\item An object has uniform density of 3 kg/m\textsuperscript{3}, and
+  it is 0.1 m thick. The object has the shape of a rectangle that is
+  2m tall and 0.1m wide. It is 0.1m thick.
+  \begin{subproblem}
+  \item Make a sketch of the object.
+    \vfill
+  \item Determine the volume of the object.
+    \vfill
+  \item Determine the mass of the object.
+    \vfill
+  \end{subproblem}
+  \item An area is bounded on the left by $x=1$, on
+  the right by $x=3$, above by $y=x$, and below by $y=-x$.
+  Make a sketch of the object.
+    \vfill
+\end{problem}
+
+
+
+\actTitle{Center of Mass With Varying Density}
+\begin{problem}
+\item A long, thin rod rests on the $x$-axis. The left end starts at
+  $x=0$, and the other end goes to $x=4$ m. The density of the rod is
+  $\rho(x)=1+\frac{x}{2}$ kg/m.
+  \begin{subproblem}
+  \item Make a sketch of the rod.
+    \vspace{2em}
+  \item Divide the rod into four parts, and approximate the total mass
+    using a left sided Riemann sum.
+    \vfill
+  \item Divide the rod into $N$ parts and determine an expression for
+    the left sided Riemann sum for the mass of the rod.
+    \begin{subsubproblem}
+      \item Determine the width of each piece in terms of $N$
+        \vspace{3em}
+      \item Determine the formula for the left endoint of each piece, $x_k$.
+          \vfill
+      \item Determine the mass of a single piece whose left endpoint is at $x_k$.
+        \vfill
+      \item Determine the Riemann sum that is an approximation of the total mass.
+        \vfill
+      \item Determine the definite integral that represents total mass.
+          \sideNote{Do not determine the value of the integral just
+            express the result as an integral.}
+        \vspace{3em}
+    \end{subsubproblem}
+
+    \clearpage
+
+  \item Repeat the previous steps to determine the total torque of the rod around
+    the center of mass as an integral. First divide the rod into $N$ parts and determine an expression for
+    the total torque of the pieces around the center of mass. (Denote
+    the center of mass as $x_{\mathrm{cm}}$.)
+    \vfill
+
+  \item Set the previous expression to zero and solve  for the center of mass.
+    \sideNote{Keep in mind that $x_{\mathrm{cm}}$ is a constant.}
+    \vfill
+
+  \end{subproblem}
+
+  \clearpage
+
+\item A metal plate is 0.1 m thick. The object is bounded on the left by
+  $x=1$, on the right by $x=3$, above by $y=x$, and below by
+  $y=-x$. The density of the object is $\rho(x)=1+\frac{x^2}{5}$
+  kg/m. Determine the $x$-coordinate of the center of mass of the
+  object.
+
+  \vfill
+
+
+\end{problem}
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+\item A metal plate is 0.2 m thick. The object is bounded on the left by
+  $x=2$, on the right by $x=5$, above by $y=x^2$, and below by
+  $y=-x^2$. The density of the object is $\rho(x)=x+\frac{x^3}{10}$
+  kg/m. Determine the $x$-coordinate of the center of mass of the
+  object.
+    \vfill
+    \clearpage
+\end{problem}
+
+
+%=========================================================================
+% Start of activity on work-energy as well as impulse relationships
+%=========================================================================
+\preClass{Work}
+
+\begin{problem}
+\item A rope is attached to an object, and it is pulled at an angle of
+  $\frac{\pi}{6}$ from above the horizontal. The object is 3.0 kg, and
+  the coefficient of friction is 0.3. The object is pulled for 3
+  meters at a constant velocity. How much work was done by the force
+  acting on the rope?
+
+  \vfill
+\end{problem}
+
+
+\actTitle{Practice With Work Integrals}
+\begin{problem}
+\item A block is arranged as shown in the diagram below. The block has
+  a mass of 50 kg, and its height, $H$, is 1m.  The coefficient of
+  friction between the block and the base it is resting on is 0.2. A
+  rope is connected to the block half way up and is hanging over a
+  corner that has negligible friction. The right edge of the block is
+  initially a distance $d_1=4.0$m from the edge, and it starts from
+  rest. A constant tension of 150 N is applied to the rope. \\
+  \includegraphics[width=7cm]{ink/week10/hangingBlocks}
+
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram for the block.
+      \vfill
+    \item Determine the equations for Newton's Second Law in the $x$
+      and $y$-directions.
+      \vfill
+      \clearpage
+    \item Determine the equation for the acceleration in the
+      horizontal direction.
+      \vfill
+    \item Use the fact that $\frac{d}{dt} x(t) = v(t)$ to write the
+      equation in the previous question as a system of two equations
+      in terms of $v(t)$ and $x(t)$.
+      \vfill
+
+      \clearpage
+
+    \item Divide the \textbf{time} that the block is sliding into
+      steps of 0.05 seconds. Approximate the position of the object at
+      any time using a Riemann sum. (Use a spreadsheet to make the
+      approximations.)
+
+      \clearpage
+
+  \end{subproblem}
+
+  \clearpage
+
+\item Using the previous situation determine an approximation of the
+  work done by the force of friction on the upper block from the start
+  and until it reaches the corner.
+
+  \vfill
+
+\end{problem}
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+\item
+  \begin{subproblem}
+    \item
+  \end{subproblem}
+\end{problem}
+
+%=========================================================================
+% Start of session on trig review
+%=========================================================================
+\preClass{Trig Review}
+
+\begin{problem}
+\item Determine the derivatives of each of the following functions:
+  \begin{subproblem}
+  \item $\sin(3t)$
+    \vfill
+  \item $\cos(3t)$
+    \vfill
+  \item $\tan(3t)$
+    \vfill
+  \item $\sin(t)\cos(t)$
+    \vfill
+  \end{subproblem}
+
+  \clearpage
+
+\item Determine the lengths and angles of the parts of the triangles
+  that are missing in each of the triangles below.
+
+  \scalebox{0.5}{\input{py/week10/simpleWedge.pgf}}
+
+  \vfill
+
+\end{problem}
+
+\actTitle{Derivatives of Other Trigonometric Functions}
+\begin{problem}
+
+\item We examine the identity
+  \begin{eqnarray*}
+    \sin^2(\theta) + \cos^2(\theta) & = & 1.
+  \end{eqnarray*}
+
+  \begin{subproblem}
+  \item Make a sketch of the unit circle. Use the definition of sine
+    and cosine to explain why the identity above is true.
+    \sideNote{Just give a heuristic explanation.}
+    \vfill
+
+  \item Divide both sides of the identity by $\cos^2(\theta)$.
+    \vfill
+
+  \item Use the definition of the tangent and secant to express the
+    new result in terms of these two trigonometric functions.
+    \vfill
+
+  \end{subproblem}
+
+  \clearpage
+
+\item We derive the derivative of $\sec(\theta)$.
+
+  \begin{subproblem}
+    \item Express $\sec(\theta)$ in terms of the cosine.
+      \vspace{4em}
+    \item Determine the derivative of the previous expression.
+      \vfill
+    \item Use any appropriate trigonometric identity to simplify the
+      expression.
+      \vfill
+  \end{subproblem}
+  \clearpage
+
+\item We derive the derivative of $\cot(\theta)$.
+
+  \begin{subproblem}
+    \item Express $\cot(\theta)$ in terms of the sine and the cosine.
+      \vspace{4em}
+    \item Determine the derivative of the previous expression.
+      \vfill
+    \item Use any appropriate trigonometric identity to simplify the
+      expression.
+      \vfill
+  \end{subproblem}
+  \clearpage
+
+\end{problem}
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+\item A person is standing at the origin, $(0,0)$, and they are facing
+  in the positive $x$-direction. The person turns to the left
+  $\frac{\pi}{3}$ radians, walks 3 meters in 10 seconds. The person
+  stops, turns $\frac{\pi}{4}$ to the right and walks 5 meters in
+  another 10 seconds.
+  \begin{subproblem}
+    \item  Make a sketch of the person's path.
+      \vfill
+    \item Determine the person's position at 10 and 20 seconds.
+      \vfill
+    \item Determine the person's position for any time less than 10
+      seconds.
+      \vfill
+    \item Determine the person's position for any time between 10 and
+      20 seconds.
+      \vfill
+  \end{subproblem}
+  \clearpage
+\item A person is standing at the origin, $(0,0)$, and they are facing
+  in the positive $x$-direction. The person turns to the left
+  $\frac{2\pi}{3}$ radians, walks 3 meters in 10 seconds. The person
+  stops, turns $\frac{\pi}{2}$ to the left and walks 5 meters in
+  another 10 seconds.
+  \begin{subproblem}
+    \item  Make a sketch of the person's path.
+      \vfill
+    \item Determine the person's position at 10 and 20 seconds.
+      \vfill
+    \item Determine the person's position for any time.
+      \vfill
+  \end{subproblem}
+\end{problem}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "labManual"
+%%% End:

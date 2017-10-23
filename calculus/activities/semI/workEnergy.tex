@@ -1,0 +1,473 @@
+
+
+%=========================================================================
+% Start of the introduction to work energy integrals
+%=========================================================================
+\preClass{Vector Components}
+
+\begin{problem}
+\item A 2,000 N force is applied to a 500 kg block of granite as shown
+  below.
+
+  \includegraphics[width=10cm]{ink/week7/dragBlock}
+
+  \begin{subproblem}
+  \item If the angle, $\alpha$, is $\frac{\pi}{6}$ determine the
+    $\vec{i}$ and $\vec{j}$ components of the force.
+    \vfill
+  \item If the angle, $\alpha$, is $\frac{\pi}{3}$ determine the
+    $\vec{i}$ and $\vec{j}$ components of the force.
+    \vfill
+  \item If the angle, $\alpha$, is $\frac{2\pi}{3}$ determine the
+    $\vec{i}$ and $\vec{j}$ components of the force.
+    \vfill
+  \end{subproblem}
+
+  \clearpage
+
+\item A 1,800 N force is applied to a 500 kg block of granite as
+  shown below. The coefficient of friction is 0.2.
+
+  \includegraphics[width=8cm]{ink/week7/dragBlock}
+
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram.
+      \vspace{6em}
+    \item Determine the work done by the force, $\vec{F}_p$, if the block is dragged
+      10 m and the angle is $\alpha=\frac{\pi}{6}$.
+
+      \vfill
+
+%    \item Determine the work done by the force if the block is pulled
+%      for 10 meters and the angle is $\alpha=\frac{\pi}{3}$.
+%
+      \vfill
+
+%    \item Determine the largest angle which can be used and move the
+%      block.
+%
+%      \vfill
+
+  \end{subproblem}
+
+
+\end{problem}
+
+
+\actTitle{Work For Non-Constant Forces}
+\begin{problem}
+\item Suppose that a block of granite is pulled, and as the
+  granite moves part of it grinds off on the bottom. It starts at a mass of 500
+  kg. Mass is removed at a constant rate of 2 kg  per meter. Assume
+  that the block starts at the origin, $x=0$ and assume that the angle
+  is $\alpha=0$. The coefficient of friction is 0.2.
+
+  \begin{subproblem}
+  \item Determine the mass of the block given its position.
+    \vfill
+  \item Determine the amount of force necessary to move the block so
+    that it's velocity is constant. That is
+    $\frac{d}{dt} \vec{v}(t)$ is zero.
+    \vfill
+  \item Make a sketch of the force as a function of the block's
+    position.
+    \sideNote{ Be sure to label your axes and label all important
+      points on your graph.}
+
+    \vfill
+  \end{subproblem}
+
+\clearpage
+
+\item The block used in the previous question is further examined, and we wish
+  to find the amount of work necessary to pull the block at a constant
+  speed over a distance of 100m.  Suppose that as the block is pulled
+  the granite grinds off on the bottom. It starts at a mass of 500 kg
+  and is pulled at a constant velocity. Mass is removed at constant 2 kg per
+  meter. Assume that the block starts at the origin, $x=0$ and assume
+  that the angle is $\alpha=0$. The coefficient of friction is 0.2.
+
+  \includegraphics[width=8cm]{ink/week7/dragBlock}
+
+  \begin{subproblem}
+  \item Break the distance in five equal lengths across the 100m.  If
+    you assume that the force is constant over each interval how much
+    work is done by the force?
+    \sideNote{Use the force required at the start of each interval.}
+
+    \vfill
+
+  \item Break the distance in ten equal lengths across the 100m.  If
+    you assume that the force is constant over each interval how much
+    work is done by the force?
+    \sideNote{Use the force required at the start of each interval.}
+
+    \vfill
+
+    \clearpage
+
+  \item Break the distance in twenty equal lengths across the 100m.  If
+    you assume that the force is constant over each interval how much
+    work is done by the force?
+    \sideNote{Use the force required at the start of each interval.}
+
+    \vfill
+
+  \item Briefly explain what is happening with respect to your
+    approximation of the work. Is it getting bigger or smaller? What
+    can you do to make the approximation better?
+
+    \vspace{3em}
+
+  \end{subproblem}
+\end{problem}
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+\item
+  \begin{subproblem}
+    \item
+  \end{subproblem}
+\end{problem}
+
+
+
+%=========================================================================
+% Start of discussion on impulse and momentum
+%=========================================================================
+\preClass{Change in Momentum}
+
+\begin{problem}
+\item A 2 kg object starts from rest on a straight track, and it can
+  only move left or right. A force
+  is applied to the object in the $\vec{i}$ direction, and the magnitude is shown
+  in the plot below.
+
+  %\scalebox{0.5}{\input{py/week8/piecewiseConstantForceI_week8day1.pgf}}
+  \begin{tikzpicture}[y=0.25cm, x=1.75cm,font=\sffamily]
+    % ticks
+    \draw[xstep = 1, ystep=2,gray,dashed] (0.0, 0.0) grid ( 5.5, 25.5);  %  very thin,opacity=0.85,
+    % axis
+    \draw[thick,->] (-0.5,0) -- coordinate (x axis mid) (5.5,0)  node[anchor = north west] {$x$ (m)};
+    \draw[thick,->] (0,-0.5) -- coordinate (y axis mid) (0,25.5) node[anchor = south east] {Force (N)};
+
+      \foreach \y in {4,8,...,24} {
+        \draw (1pt, \y) -- (-1pt, \y) node[anchor = east] {$\y$};
+      }
+      \foreach \x in {1,2,3,4,5} {
+        \draw (\x,1pt) -- (\x,-1pt) node[anchor = north] {$\x$};
+      }
+
+     %\draw[scale=1.0,domain=0:5.1,smooth,variable=\x,very thick,black,samples=60]
+      %  plot ({\x},{(\x)^2}); %node[anchor= west] {$f(x)=e^{ax}$};
+
+     \draw[thick] (1,1) -- (2,1);
+     \fill[black] (1,1) circle [radius=0.5ex];
+     \fill[white] (2,1) circle [radius=0.5ex];
+     \draw (2,1) circle [radius=0.5ex];
+
+     \draw[thick] (2,4) -- (3,4);
+     \fill[black] (2,4) circle [radius=0.5ex];
+     \fill[white] (3,4) circle [radius=0.5ex];
+     \draw (3,4) circle [radius=0.5ex];
+
+     \draw[thick] (3,9) -- (4,9);
+     \fill[black] (3,9) circle [radius=0.5ex];
+     \fill[white] (4,9) circle [radius=0.5ex];
+     \draw (4,9) circle [radius=0.5ex];
+
+     \draw[thick] (4,16) -- (5,16);
+     \fill[black] (4,16) circle [radius=0.5ex];
+     \fill[white] (5,16) circle [radius=0.5ex];
+     \draw (5,16) circle [radius=0.5ex];
+
+    \end{tikzpicture}
+
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram.
+      \vspace{4em}
+    \item Determine the work done by the force from $x=1$ to $x=5$.
+      \vfill
+  \end{subproblem}
+
+\end{problem}
+
+
+\actTitle{Change in Momentum by Non-constant Forces.}
+\begin{problem}
+\item A 2 kg object starts from rest on a straight track, and it can
+  only move left or right. The positive direction is to the right, and
+  a force is applied with the $\vec{i}$ component given by $F(x)=x^2$.
+
+  %\scalebox{0.5}{\input{py/week8/piecewiseConstantForceI_week8day1.pgf}}
+
+  \begin{tikzpicture}[y=0.3cm, x=1.75cm,font=\sffamily]
+    % ticks
+    \draw[xstep = 1, ystep=2,gray,dashed] (0.0, 0.0) grid ( 5.5, 25.5);  %  very thin,opacity=0.85,
+    % axis
+    \draw[thick,->] (-0.5,0) -- coordinate (x axis mid) (5.5,0)  node[anchor = north west] {$x$ (m)};
+    \draw[thick,->] (0,-0.5) -- coordinate (y axis mid) (0,25.5) node[anchor = south east] {Force (N)};
+
+      \foreach \y in {4,8,...,24} {
+        \draw (1pt, \y) -- (-1pt, \y) node[anchor = east] {$\y$};
+      }
+      \foreach \x in {1,2,3,4,5} {
+        \draw (\x,1pt) -- (\x,-1pt) node[anchor = north] {$\x$};
+      }
+
+     \draw[scale=1.0,domain=0:5.1,smooth,variable=\x,very thick,black,samples=60]
+        plot ({\x},{(\x)^2}); %node[anchor= west] {$f(x)=e^{ax}$};
+
+    \draw[pattern=crosshatch dots, pattern color=black,very thin,opacity=0.85] (1,0) rectangle (3,1);
+    \draw[pattern=crosshatch dots, pattern color=black,very thin,opacity=0.85] (3,0) rectangle (5,9);
+
+     \draw[thick] (1,1) -- (3,1);
+     \fill[black] (1,1) circle [radius=0.5ex];
+     \fill[white] (3,1) circle [radius=0.5ex];
+     \draw (3,1) circle [radius=0.5ex];
+
+     \draw[thick] (3,9) -- (5,9);
+     \fill[black] (3,9) circle [radius=0.5ex];
+     \fill[white] (5,9) circle [radius=0.5ex];
+     \draw (5,9) circle [radius=0.5ex];
+
+    \end{tikzpicture}
+
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram.
+      \vspace{4em}
+    \item Divide the the position into two equal length pieces between $x=1$ and $x=5$ meters.
+    Assume that the force is constant over each piece, and is the same as the value of the force on the left side of each interval.
+    Determine an approximation for the work over each interval and then estimate the total work.
+    \sideNote{The horiztonal lines are used in the graph above to represent the approximation.}
+      \vfill
+  \end{subproblem}
+  \clearpage
+
+\item A 2 kg object starts from rest on a straight track, and it can
+  only move left or right. The positive direction is to the right, and
+  a force is applied with the $\vec{i}$ component given by $F(x)=x^2$.
+
+  %\scalebox{0.5}{\input{py/week8/piecewiseConstantForceII_week8day1.pgf}}
+
+  \begin{tikzpicture}[y=0.25cm, x=1.75cm,font=\sffamily]
+    % ticks
+    \draw[xstep = 1, ystep=2,gray,dashed] (0.0, 0.0) grid ( 5.5, 25.5);  %  very thin,opacity=0.85,
+    % axis
+    \draw[thick,->] (-0.5,0) -- coordinate (x axis mid) (5.5,0)  node[anchor = north west] {$x$ (m)};
+    \draw[thick,->] (0,-0.5) -- coordinate (y axis mid) (0,25.5) node[anchor = south east] {Force (N)};
+
+      \foreach \y in {4,8,...,24} {
+        \draw (1pt, \y) -- (-1pt, \y) node[anchor = east] {$\y$};
+      }
+      \foreach \x in {1,2,3,4,5} {
+        \draw (\x,1pt) -- (\x,-1pt) node[anchor = north] {$\x$};
+      }
+
+     \draw[scale=1.0,domain=0:5.1,smooth,variable=\x,very thick,black,samples=60]
+        plot ({\x},{(\x)^2}); %node[anchor= west] {$f(x)=e^{ax}$};
+
+     %\draw[thick] (1,1) -- (2,1);
+     %\fill[black] (1,1) circle [radius=0.5ex];
+     %\fill[white] (2,1) circle [radius=0.5ex];
+     %\draw (2,1) circle [radius=0.5ex];
+
+     %\draw[thick] (2,4) -- (3,4);
+     %\fill[black] (2,4) circle [radius=0.5ex];
+     %\fill[white] (3,4) circle [radius=0.5ex];
+     %\draw (3,4) circle [radius=0.5ex];
+
+     %\draw[thick] (3,9) -- (4,9);
+     %\fill[black] (3,9) circle [radius=0.5ex];
+     %\fill[white] (4,9) circle [radius=0.5ex];
+     %\draw (4,9) circle [radius=0.5ex];
+
+     %\draw[thick] (4,16) -- (5,16);
+     %\fill[black] (4,16) circle [radius=0.5ex];
+     %\fill[white] (5,16) circle [radius=0.5ex];
+     %\draw (5,16) circle [radius=0.5ex];
+
+    \end{tikzpicture}
+
+
+  \begin{subproblem}
+    \item Divide the the position into four equal length pieces between $x=1$ and $x=5$ meters.
+    Assume that the force is constant over each piece, and is the same as the value of the force on the left side of each interval.
+    Determine an approximation for the work over each interval and then estimate the total work.
+      \vfill
+    \item Add the appropriate rectangles to the graph above that will give a graphical representation of the sum.
+    Is this a better or worse approximation than the previous approximation? How can you make it better?
+  \end{subproblem}
+  \clearpage
+
+  \item A 2 kg object starts from rest on a straight track, and it can
+    only move left or right. The positive direction is to the right, and
+    a force is applied with the $\vec{i}$ component given by $F(x)=x^2$.
+
+    %\scalebox{0.5}{\input{py/week8/piecewiseConstantForceII_week8day1.pgf}}
+
+    \begin{tikzpicture}[y=0.2cm, x=1.75cm,font=\sffamily]
+      % ticks
+      \draw[xstep = 1, ystep=2,gray,dashed] (0.0, 0.0) grid ( 5.5, 25.5);  %  very thin,opacity=0.85,
+      % axis
+      \draw[thick,->] (-0.5,0) -- coordinate (x axis mid) (5.5,0)  node[anchor = north west] {$x$ (m)};
+      \draw[thick,->] (0,-0.5) -- coordinate (y axis mid) (0,25.5) node[anchor = south east] {Force (N)};
+
+        \foreach \y in {4,8,...,24} {
+          \draw (1pt, \y) -- (-1pt, \y) node[anchor = east] {$\y$};
+        }
+        \foreach \x in {1,2,3,4,5} {
+          \draw (\x,1pt) -- (\x,-1pt) node[anchor = north] {$\x$};
+        }
+
+       \draw[scale=1.0,domain=0:5.1,smooth,variable=\x,very thick,black,samples=60]
+          plot ({\x},{(\x)^2}); %node[anchor= west] {$f(x)=e^{ax}$};
+
+      \end{tikzpicture}
+
+
+    \begin{subproblem}
+      \item Divide the the position into $N$ equal length pieces between $x=1$ and $x=5$ meters. Determine the length and starting point of each interval.
+      \vspace{4em}
+      \item Assume that the force is constant over each piece, and is the same as the value of the force on the left side of each interval.
+      Determine an approximation for the work over each interval.
+      \vfill
+      \item Determine a expression for the sum that is an estimate of the total work.
+        \vfill
+    \end{subproblem}
+
+\end{problem}
+
+
+\postClass
+
+\begin{problem}
+\item Briefly state two ideas from today's class.
+  \begin{itemize}
+  \item
+  \item
+  \end{itemize}
+  \item Briefly state two ideas from today's class.
+    \begin{itemize}
+    \item
+    \item
+    \end{itemize}
+    \item An arrow is placed in a bow, and the bow is pulled back. The
+      force due to the bow string on the arrow is 700N/m multiplied by the
+      displacement.
+      \begin{subproblem}
+      \item Make a sketch of the free body diagram of the arrow.
+        \sideNote{label the angle between the force applied to the arrow
+          and the direction of movement of the arrow.}
+        \vfill
+      \item The maximum force a person can apply to the bow string is
+        250N. How far back can the person pull the arrow?
+        \vfill
+      \item Make a sketch of the force as a function of the displacement
+        from 0m to the maximum displacement.
+        \sideNote{Label the axes and include the units used.}
+        \vfill
+        \clearpage
+      \item Make an approximation of the work performed on the arrow over
+        the first 0.05m when it is released.
+        \vfill
+      \item If the movement is divided up into 5 equally spaced segments
+        determine the force at the start of any segment.
+        \vfill
+      \item Use the formula for the force to construct an approximation
+        for the total work performed on the arrow if it is released from
+        the maximum distance.
+        \vfill
+      \end{subproblem}
+  \clearpage
+  \item An arrow is placed in a bow, and the bow is pulled back. The
+    force due to the bow string on the arrow is 700N/m multiplied by the
+    displacement.
+    \begin{subproblem}
+    \item Make a sketch of the free body diagram of the arrow.
+      \sideNote{label the angle between the force applied to the arrow
+        and the direction of movement of the arrow.}
+      \vfill
+    \item The maximum force a person can apply to the bow string is
+      250N. What is the maximum displacement?
+      \vfill
+    \item Make a sketch of the force as a function of the displacement
+      from 0m to the maximum displacement.
+      \sideNote{Label the axes and include the units used.}
+      \vfill
+      \clearpage
+    \item If the movement is divided up into $N$ equally spaced segments
+      determine the force at the start of any segment.
+      \vfill
+    \item Determine the total work performed over any one segment.
+      \vfill
+    \item Use the formula for the force to construct an approximation
+      for the total work performed on the arrow if it is released from
+      the maximum distance.
+      \vfill
+    \item What can you do to refine and make a more accurate estimate of
+      the work?
+    \end{subproblem}
+\item A 2 kg object starts from rest on a straight track, and it can
+  only move left or right. The positive direction is to the right, and
+  a force of $\vec{F}(t)=t^2 \vec{i}$ is applied to the object.
+
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram.
+      \vspace{4em}
+    \item Make a sketch of the force in the $\vec{i}$ direction. \\
+      \scalebox{0.5}{\input{py/week8/changingForceGrid_week8day1.pgf}}
+
+    \item Determine the change in momentum of the object after 4
+      seconds by dividing up the time into four equally spaced
+      intervals and assuming that the force is constant over each
+      interval. Sketch the assumed, piecewise constant force, on the
+      axes above.
+      \vfill
+    \item Determine the change in momentum of the object after 4
+      seconds by dividing up the time into eight equally spaced
+      intervals and assuming that the force is constant over each
+      interval. Sketch the assumed, piecewise constant force, on the
+      axes above.
+      \vfill
+  \end{subproblem}
+
+  \clearpage
+
+\item A 2 kg object starts from rest on a straight track, and it can
+  only move left or right. The positive direction is to the right, and
+  a force of $\vec{F}(t)=t^2 \vec{i}$ is applied to the object.
+
+  \begin{subproblem}
+    \item Make a sketch of the free body diagram.
+      \vspace{4em}
+    \item Make a sketch of the force in the $\vec{i}$ direction. \\
+      \scalebox{0.5}{\input{py/week8/changingForceGrid_week8day1.pgf}}
+    \item Determine the work on the object by the force after 4
+      seconds by dividing up the time into four equally spaced
+      intervals and assuming that the force is constant over each
+      interval. Sketch the assumed, piecewise constant force, on the
+      axes above.
+      \vfill
+    \item Determine the work on the object by the force after 4
+      seconds by dividing up the time into eight equally spaced
+      intervals and assuming that the force is constant over each
+      interval. Sketch the assumed, piecewise constant force, on the
+      axes above.
+      \vfill
+  \end{subproblem}
+
+\end{problem}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "labManual"
+%%% End:
